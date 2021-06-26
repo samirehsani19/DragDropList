@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Default functionality</title>
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; background: mediumvioletred;}
+  #sortable li{ margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; background: #CCC; font-size: 1.4em; height: 18px; }
+  #submenu { list-style-type: none; margin: 0; padding: 0; width: 60%; background: #0d0;}
+  #submenu li{ margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; background: #f8f41b; font-size: 1.4em; height: 18px; }
+  ul{
+    width: 800px;
+    height: 400px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="./Package/jquery-ui.min.js"></script>
+
+</head>
+<body>
+  <ul id="sortable" class="connectedSortable">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+  <hr style="font-size: 50px; padding: 10px; background: maroon;">
+  <ul id="submenu" class="connectedSortable">
+    <li>Extra 1</li>
+    <li>Extra 2</li>
+    <li>Extra 3</li>
+    <li>Extra 4</li>
+    <li>Extra 5</li>
+  </ul>
+  
+</body>
+</html>
+
+<script>
+  //connect two lists to drag and drop to each other
+    $("#sortable, #submenu").sortable({connectWith: ".connectedSortable"}).disableSelection();
+  </script>
